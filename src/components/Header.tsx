@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { cn } from "../lib/utils";
+// import { cn } from "../lib/utils";
 
 const Links = [
   { path: "#", name: "Home" },
@@ -15,12 +15,12 @@ export default function Header() {
   };
 
   return (
-    <header className="h-24 lg:h-30 absolute inset-x-0 bg-transparent md:bg-[rgba(0,0,0,0.3)]">
+    <header className="h-24 lg:h-30 bg-[#fefefe] shadow-md relative">
       <div className="mx-auto h-full w-[90%] lg:w-[75%] flex items-center justify-between">
         <a href="#" className="h-full">
           <div className="h-full overflow-hidden">
             <img
-              src="/images/logo.png"
+              src="/images/tls_logo.png"
               alt="tls logo"
               className="h-full w-auto object-contain"
             />
