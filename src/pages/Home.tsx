@@ -1,6 +1,31 @@
+import { useState } from "react";
 import Hero from "../components/Hero";
+import { DeclarationModal, EventModal, PrayerModal, TestimonyModal } from "../components/modals";
 
 export default function Home() {
+  const [declarationModalIsOpen, setDeclarationModalIsOpen] =
+    useState<boolean>(false);
+  const [testimonyModalIsOpen, setTestimonyModalIsOpen] =
+    useState<boolean>(false);
+  const [prayerModalIsOpen, setPrayerModalIsOpen] = useState<boolean>(false);
+  const [eventModalIsOpen, setEventModalIsOpen] = useState<boolean>(false);
+
+  const closeDeclarationModal = () => {
+    setDeclarationModalIsOpen(false);
+  };
+
+  const closeTestimonyModal = () => {
+    setTestimonyModalIsOpen(false);
+  };
+
+  const closePrayerModal = () => {
+    setPrayerModalIsOpen(false);
+  };
+
+  const closeEventModal = () => {
+    setEventModalIsOpen(false);
+  };
+
   return (
     <main className="min-h-screen bg-gray-50">
       <section className="w-full">
@@ -13,25 +38,59 @@ export default function Home() {
         <div className="mx-auto w-[90%] lg:w-[75%]">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
-              { src: "/images/declaration.jpg", alt: "Declaration" },
-              { src: "/images/prayer.jpg", alt: "Prayer" },
-              { src: "/images/testimony.jpg", alt: "Testimony" },
-              { src: "/images/event.jpg", alt: "Upcoming Event" },
+              {
+                src: "/images/declaration.jpg",
+                alt: "Declaration",
+                openModal: () => {
+                  setDeclarationModalIsOpen(true);
+                },
+                modal: DeclarationModal,
+              },
+              {
+                src: "/images/prayer.jpg",
+                alt: "Prayer",
+                openModal: () => {
+                  setPrayerModalIsOpen(true);
+                },
+                modal: DeclarationModal,
+              },
+              {
+                src: "/images/testimony.jpg",
+                alt: "Testimony",
+                openModal: () => {
+                  setTestimonyModalIsOpen(true);
+                },
+                modal: DeclarationModal,
+              },
+              {
+                src: "/images/event.jpg",
+                alt: "Upcoming Event",
+                openModal: () => {
+                  setEventModalIsOpen(true);
+                },
+                modal: DeclarationModal,
+              },
             ].map((img) => (
-              <div
-                key={img.alt}
-                className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition"
-              >
-                <img
-                  src={img.src}
-                  alt={img.alt}
-                  className="aspect-square w-full object-cover group-hover:scale-105 transition"
-                />
-                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition" />
-                <p className="absolute bottom-3 left-3 text-white font-medium opacity-0 group-hover:opacity-100 transition">
-                  {img.alt}
-                </p>
-              </div>
+              <>
+                <div
+                  key={img.alt}
+                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition"
+                  onClick={img.openModal}
+                >
+                  <img
+                    src={img.src}
+                    alt={img.alt}
+                    className="aspect-square w-full object-cover group-hover:scale-105 transition"
+                  />
+                  <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition" />
+                  <p className="absolute bottom-3 left-3 text-white font-medium opacity-0 group-hover:opacity-100 transition">
+                    {img.alt}
+                  </p>
+                </div>
+                {
+                  img.modal
+                }
+              </>
             ))}
           </div>
         </div>
