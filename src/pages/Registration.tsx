@@ -16,7 +16,7 @@ type MemberFormData = {
   consent: boolean;
 };
 
-export default function RegistrationForm(): JSX.Element {
+export default function Registration() {
   const [form, setForm] = useState<MemberFormData>({
     firstName: "",
     surname: "",

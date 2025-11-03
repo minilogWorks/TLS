@@ -12,7 +12,6 @@ function App() {
       <main className="lg:bg-[#e5e5e5]">
         <Home />
       </main>
-      <Registration />
       <Footer />
     </div>
   );

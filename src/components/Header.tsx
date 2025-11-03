@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router";
 // import { cn } from "../lib/utils";
 
 const Links = [
@@ -42,9 +43,12 @@ export default function Header() {
             ))}
           </ul>
 
-          <button className="rounded-md border border-[#b69121] bg-[#b69121] px-2 py-1 text-white transition hover:opacity-80">
+          <Link
+            to="/register"
+            className="rounded-md bg-[#b69121] px-4 py-2 text-white font-semibold hover:bg-[#a07a1c] transition"
+          >
             Register
-          </button>
+          </Link>
         </nav>
 
         {/* MOBILE NAVIGATION */}
@@ -88,12 +92,12 @@ export default function Header() {
                   ))}
                 </ul>
                 <div className="mt-8 flex justify-center">
-                  <button
+                  <Link
+                    to={"/register"}
                     className="w-[60%] rounded-md bg-[#b69121] py-2 text-white"
-                    onClick={toggleShowMobileMenu}
                   >
                     Register
-                  </button>
+                  </Link>
                 </div>
               </nav>
             </div>
