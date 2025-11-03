@@ -21,9 +21,16 @@ export default function Footer() {
               </div>
               <div>
                 <p className="font-bold text-[#b69121] mb-1">Wednesday</p>
-                <p className="leading-relaxed">7:00 PM – Worship Service</p>
+                <p className="leading-relaxed">7:00 PM – Cell meetings</p>
                 <p className="text-sm italic text-gray-500 mt-1">
-                  (During Lent & Advent only)
+                  (Held at Various Zones)
+                </p>
+              </div>
+              <div>
+                <p className="font-bold text-[#b69121] mb-1">Friday</p>
+                <p className="leading-relaxed">6:00 PM – Prayer meetings</p>
+                <p className="text-sm italic text-gray-500 mt-1">
+                  (Kotei school Park)
                 </p>
               </div>
             </div>

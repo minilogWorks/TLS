@@ -50,7 +50,7 @@ export default function Home() {
               <div className="flex-1 p-6 flex items-center justify-center">
                 <iframe
                   className="w-full max-w-2xl aspect-video rounded-xl shadow-2xl"
-                  src="https://www.youtube-nocookie.com/embed/k4LjOWJeOME"
+                  src="https://www.youtube-nocookie.com/embed/k4LjOWJeOME?si=ANr30_WEpzjHC-aH"
                   title="Latest Sermon"
                   allowFullScreen
                   loading="lazy"

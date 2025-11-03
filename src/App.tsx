@@ -2,6 +2,7 @@ import Banner from "./components/Banner";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Home from "./pages/Home";
+import Registration from "./pages/Registration";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <main className="lg:bg-[#e5e5e5]">
         <Home />
       </main>
+      <Registration />
       <Footer />
     </div>
   );
