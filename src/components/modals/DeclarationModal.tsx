@@ -50,16 +50,7 @@ function DeclarationModal({
       contentLabel="Example Modal"
     >
       {/* <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2> */}
-      <h2>Hello</h2>
-      <button onClick={closeModal}>close</button>
-      <div>I am a modal</div>
-      <form>
-        <input />
-        <button>tab navigation</button>
-        <button>stays</button>
-        <button>inside</button>
-        <button>the modal</button>
-      </form>
+      <h2>Declaration Modal</h2>
     </Modal>
   );
 }

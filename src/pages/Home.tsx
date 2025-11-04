@@ -1,6 +1,11 @@
 import { useState } from "react";
 import Hero from "../components/Hero";
-import { DeclarationModal, EventModal, PrayerModal, TestimonyModal } from "../components/modals";
+import {
+  DeclarationModal,
+  EventModal,
+  PrayerModal,
+  TestimonyModal,
+} from "../components/modals";
 
 export default function Home() {
   const [declarationModalIsOpen, setDeclarationModalIsOpen] =
@@ -44,7 +49,12 @@ export default function Home() {
                 openModal: () => {
                   setDeclarationModalIsOpen(true);
                 },
-                modal: DeclarationModal,
+                modal: (
+                  <DeclarationModal
+                    closeModal={closeDeclarationModal}
+                    modalIsOpen={declarationModalIsOpen}
+                  />
+                ),
               },
               {
                 src: "/images/prayer.jpg",
@@ -52,7 +62,12 @@ export default function Home() {
                 openModal: () => {
                   setPrayerModalIsOpen(true);
                 },
-                modal: DeclarationModal,
+                modal: (
+                  <PrayerModal
+                    closeModal={closePrayerModal}
+                    modalIsOpen={prayerModalIsOpen}
+                  />
+                ),
               },
               {
                 src: "/images/testimony.jpg",
@@ -60,7 +75,12 @@ export default function Home() {
                 openModal: () => {
                   setTestimonyModalIsOpen(true);
                 },
-                modal: DeclarationModal,
+                modal: (
+                  <TestimonyModal
+                    closeModal={closeTestimonyModal}
+                    modalIsOpen={testimonyModalIsOpen}
+                  />
+                ),
               },
               {
                 src: "/images/event.jpg",
@@ -68,7 +88,12 @@ export default function Home() {
                 openModal: () => {
                   setEventModalIsOpen(true);
                 },
-                modal: DeclarationModal,
+                modal: (
+                  <EventModal
+                    closeModal={closeEventModal}
+                    modalIsOpen={eventModalIsOpen}
+                  />
+                ),
               },
             ].map((img) => (
               <>
@@ -87,9 +112,7 @@ export default function Home() {
                     {img.alt}
                   </p>
                 </div>
-                {
-                  img.modal
-                }
+                {img.modal}
               </>
             ))}
           </div>
