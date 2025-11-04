@@ -3,7 +3,7 @@ import { Link } from "react-router";
 // import { cn } from "../lib/utils";
 
 const Links = [
-  { path: "#", name: "Home" },
+  { path: "/", name: "Home" },
   { path: "#", name: "About" },
 ];
 
@@ -18,7 +18,7 @@ export default function Header() {
   return (
     <header className="h-24 lg:h-30 bg-[#fefefe] shadow-md relative">
       <div className="mx-auto h-full w-[90%] lg:w-[75%] flex items-center justify-between">
-        <a href="#" className="h-full">
+        <Link to="/" className="h-full">
           <div className="h-full overflow-hidden">
             <img
               src="/images/tls_logo.png"
@@ -26,7 +26,7 @@ export default function Header() {
               className="h-full w-auto object-contain"
             />
           </div>
-        </a>
+        </Link>
 
         {/* DESKTOP NAVIGATION */}
         <nav className="hidden md:flex items-center gap-6 lg:gap-10">
