@@ -99,7 +99,7 @@ export default function Home() {
               <>
                 <div
                   key={img.alt}
-                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition"
+                  className="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition hover:cursor-pointer"
                   onClick={img.openModal}
                 >
                   <img
@@ -119,7 +119,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="w-full py-12 bg-gradient-to-b from-white to-gray-100">
+      <section className="w-full py-12 from-white to-gray-100">
         <div className="mx-auto w-[90%] lg:w-[75%]">
           <div className="grid lg:grid-cols-2 gap-8 **items-stretch**">
             <div className="flex flex-col bg-white rounded-2xl shadow-xl overflow-hidden">
